@@ -3,8 +3,6 @@
 """
     Method that determines the number of minmum operations given n characters
 """
-
-
 def minOperations(n):
     """
         A function that calculates the fewest number of operations
@@ -13,7 +11,6 @@ def minOperations(n):
         return:
                number of min operations
     """
-
     chars_in_file = 1
     no_of_times_copied = 0  # how many times chars (H's) copied
     counter = 0  # operations counter
@@ -27,4 +24,4 @@ def minOperations(n):
             chars_in_file += no_of_times_copied
             counter += 1
     return counter
-   
+ 
