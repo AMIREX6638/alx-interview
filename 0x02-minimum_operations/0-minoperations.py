@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 
 """
     Method that determines the number of minmum operations given n characters
