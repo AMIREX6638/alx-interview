@@ -1,12 +1,29 @@
-#!/usr/bin/python3
+!/usr/bin/python3
+
 """
-Main file for testing
+    Method that determines the number of minmum operations given n characters
 """
 
-minOperations = __import__('0-minoperations').minOperations
 
-n = 4
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+def minOperations(n):
+    """
+        A function that calculates the fewest number of operations
+        needed to give a result of exactly n H characters in a file
+        args: n: Number of characters to be displayed
+        return:
+               number of min operations
+    """
 
-n = 12
-print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+    chars_in_file = 1
+    no_of_times_copied = 0  # how many times chars (H's) copied
+    counter = 0  # operations counter
+    while chars_in_file < n:
+        remainder = n - chars_in_file
+        if (remainder % chars_in_file == 0):
+            no_of_times_copied = chars_in_file
+            chars_in_file += no_of_times_copied
+            counter += 2
+        else:
+            chars_in_file += no_of_times_copied
+            counter += 1
+    return counter
