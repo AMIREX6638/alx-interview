@@ -3,8 +3,6 @@
 Solution to the nqueens problem
 """
 import sys
-
-
 def backtrack(r, n, cols, pos, neg, board):
     """
     backtrack function to find solution
@@ -17,24 +15,18 @@ def backtrack(r, n, cols, pos, neg, board):
                     res.append([l, k])
         print(res)
         return
-
     for c in range(n):
         if c in cols or (r + c) in pos or (r - c) in neg:
             continue
-
         cols.add(c)
         pos.add(r + c)
         neg.add(r - c)
         board[r][c] = 1
-
         backtrack(r+1, n, cols, pos, neg, board)
-
         cols.remove(c)
         pos.remove(r + c)
         neg.remove(r - c)
         board[r][c] = 0
-
-
 def nqueens(n):
     """
     Solution to nqueens problem
@@ -48,10 +40,7 @@ def nqueens(n):
     pos_diag = set()
     neg_diag = set()
     board = [[0] * n for i in range(n)]
-
     backtrack(0, n, cols, pos_diag, neg_diag, board)
-
-
 if __name__ == "__main__":
     n = sys.argv
     if len(n) != 2:
