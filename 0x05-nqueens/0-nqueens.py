@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Method that calculates the non-attacking nqueens of
 n * n board - Check the README.md file for detailed info"""
-
 import sys
 
 
